@@ -7,6 +7,7 @@ URL Shortener is a web application that allows you to shorten long URLs into sho
 - Track the number of clicks on each shortened link
 - Search functionality to find links based on their titles
 - Saves the data of title , short url ,full url on frontend too
+- connected with mongodb which is used to stored the the data given by the user and for search dunctionality which uses the feild :"title"
 
   
 ## Usage
