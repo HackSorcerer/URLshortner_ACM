@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    label {
+      font-weight: bold;
+      margin-bottom: 10px; /* Add margin-bottom to create a gap */
+    }
+
+    body {
+      background-image: url('https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=1380&t=st=1687188314~exp=1687188914~hmac=adcd42748ccd7b6f318a5a3e5e1d5d35e4d1ee8a6ac00ddde5007a6789c017eb');
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+    .container {
+      margin-top: 50px;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 30px;
+    }
+
+    .table {
+      background-color: #1ce0dd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border: 3px solid #000000;
+      border-radius: 6px;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+
+    .btn-success:hover {
+      background-color: #2571ea;
+      border-color: #13bc19;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>URL SHORTENER</h1>
+
+    <form action="/" method="GET" class="my-4 form-inline">
+      <label for="search" class="visually-hidden">Search</label>
+      <input placeholder="Search by Title" type="text" name="search" id="search" class="form-control col mr-2">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <div class="table-wrapper">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Full URL</th>
+            <th>Short URL</th>
+            <th>Clicks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% shortUrls.forEach(shortUrl => { %>
+            <tr>
+              <td><%= shortUrl.title %></td>
+              <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+              <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+              <td><%= shortUrl.clicks %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <form action="/shortUrls" method="POST" class="my-4 form-inline">
+      <label for="title" class="visually-hidden">Title</label>
+      <input required placeholder="Enter Title" type="text" name="title" id="title" class="form-control col mr-2">
+
+      <label for="fullUrl" class="visually-hidden">URL</label>
+      <input required placeholder="Enter URL to shorten" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+
+      <button class="btn btn-success" type="submit">SHORTEN</button>
+    </form>
+  </div>
+</body>
+
+</html>
