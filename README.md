@@ -18,5 +18,11 @@ URL Shortener is a web application that allows you to shorten long URLs into sho
 4. The shortened link will be displayed in the table along with the original URL and the number of clicks
 5. Use the search bar at the top to search for links based on their titles.
    
-
+## Insatallation 
+1. Need to open all the files in vs code or other ide .
+2. Download in termainal: mongoose ,express,nodemon ,nodemodules -by using " npm init "
+3. Connect the files with live server as in case i used localhost:5000
+4. For functioning of the site run "npm run devStart" in terminal.
+5. Now the site is ready to go which uses the mongodb for data collection and search functionality .
+   
   
